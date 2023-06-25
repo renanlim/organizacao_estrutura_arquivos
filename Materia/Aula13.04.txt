@@ -1,0 +1,17 @@
+Plano de Aula:
+Solução do programa de índice. Arquivos binários - exemplo de um arquivo BMP. 
+Leitura de Arquivos texto. 
+Tokenização de Strings em C.
+
+////////////////////////////////////////////////////////////////////////////
+
+struct S{
+    char abc[5]; --> 5 bits
+    int z; --> 4 bits
+}
+
+Na memoria interna ele reserva = 4 bits;
+Porém ele fornece = 12 bits;
+Sempre multiplos de 4;
+
+o pragma pack(1) --> alinha em 1bit = 9 bits

@@ -1,0 +1,39 @@
+Dúvidas sobre o trabalho de casa. 
+O Heap Sort. 
+Comparação empírica do quick-sort com selection sort. 
+Intercalação de Arquivos. 
+Exercício de Laboratório. 
+Implementar a intercalação dos dois arquivos fornecidos no canal da aula de hoje.
+
+/////////////////////////////
+Uma estrutura em modo r
+Uma estrutura em modo wb
+
+////////////////////////////
+
+(Max)Heap
+
+#O que é? Elementos pais maiores que os filhos representados em um array
+
+#Arvore de busca binaria --> elementos menores a esquerda e maiores a direita
+
+#Como saber os filhos de um elemento? pai(i) e filhos(2i e 2i+1) 
+
+
+#O Heap trabalha com fila de prioridade --> se for o MaxHeap o elemento maior é o primeiro que sai
+
+#Após tirar o maior elemento e o lugar ficar vazio, o elemento que sobe é o último da fila
+
+#Faz o processo de comparação entre o pai e filho de cima para baixo, sempre com o maior elemento 
+
+#Inserir um elemento --> O(log n) "Percorre toda a árvore"
+#Remover um elemento --> O(log n) "Percorre toda a árvore"
+#Complexidade esperada --> O(2 n log n)
+
+/////////////////////////////////
+
+fopen --> instancia o FILE 
+
+///////////////////////////////
+
+g++ -o teste testeheap.cpp heap.cpp

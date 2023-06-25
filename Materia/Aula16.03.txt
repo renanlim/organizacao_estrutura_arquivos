@@ -1,0 +1,72 @@
+
+if(strncmp(argv[1],e.cep,8)==0)  
+ * O valor 8 é um recurso para limitar a qtd de bytes de leitura do arq
+ * argv[1] aqui recebe o cep
+
+printf("%.72s\n%.72s\n%.72s\n%.72s\n%.2s\n%.8s\n",e.logradouro,e.bairro,e.cidade,e.uf,e.sigla,e.cep); 
+ * Nesse printf também aparece um limitador do tam do byte como o %.72s...
+
+{'R', 'E', '\0'} 
+ * O BARRA ZERO INDICA QUE A STRING TERMINA (NULL TERMINATED)
+
+qt = fread(&e,sizeof(Endereco),1,f);
+ * &e aloca memoria
+ * fread retorna 0 ou 1
+
+
+Método de acesso sequencial --> menos eficiente
+
+////////////////////////////////////////////////////
+
+fseek(a,b,c)
+a: arquivo(f)
+b: deslocamento(390561)
+c: posicao relativa(seek_set, seek_cur, seek_end) --> pode passar tres parametros
+seek_set --> posicao absoluta e manda para posicao sem perguntar onde vc estava // 0 seek_set vou para o inicio
+seek_cur --> posicao relativa, verifica a posicao que estava e vai para a desejada // 10 seek_cur -2 vou para 8
+seek_end --> posicao relativa ao final do arquivo, vai para o final do arquivo // 0 seek_end vou para o final
+-->seek_end posicionando a cabeca de leitura no final retorna o TAM do arquivo 
+
+ftell(a)
+a: arquivo(f)
+--> onde estou? retorna um numero que sera uma posicao
+--> sempre retorna uma posicao absoluta
+
+//////////////////////////////////////////////////
+
+BUSCA BINÁRIA
+
+if(procurado > v[meio]){
+    inicio = meio + 1;
+}
+if(procurado < v[meio]){
+    fim = meio - 1;
+}
+
+int procurado = atoi(argv[1]); --> <stdlib.h>
+
+
+///////////////////////////////////////////////
+
+Relação de recorrência --> porque temos T em função de T
+
+T(n) = 1 + T(n/2); --> o tempo para computar n registros é 1uma comparação mais uma metade
+
+T(k) = k + T(n/2^k) --> formula geral
+
+k = log N 
+       2
+
+//////////////////////////////////////////
+
+inicio = 0;
+
+fim = (ftell(f)/sizeof(e)) - 1;
+
+while(inicio <= fim){
+    meio = (inicio + fim)/2;
+
+    seek_set(meio*sizeof(e));
+
+    fseek(f, meio*sizeof(e), seek_set);
+}

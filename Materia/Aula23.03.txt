@@ -1,0 +1,23 @@
+Implementar no Laboratório a busca binária no arquivo do CEP. 
+Revisão dos algoritmos de ordenação. 
+Complexidade dos algoritmos eficientes. Ordenação de arquivos com a função nativa de C qsort. 
+Explicação sobre o próximo HW.
+
+/////////////////////////////////
+quicksort --> instável
+
+particiona --> complexidade O(n);
+quicksort --> complexidade O(n/2);
+
+T(n) = n + 2T(n/2)
+
+k = log N 
+       2
+T(N) = N log N 
+        2
+#Complexidade esperada --> O(n log n)
+
+/////////////////////////////////
+
+pessoas, endereços não sao objetos comparaveis. Por isso, é preciso definir quais parametros precisamos comparar
+e delegar para funções para comparar 
